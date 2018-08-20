@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpertsService } from '../experts.service';
 
 @Component({
   selector: 'app-experts',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpertsComponent implements OnInit {
 
-  constructor() { }
+  experts;
+
+  constructor(
+    private expertService: ExpertsService
+  ) { }
 
   ngOnInit() {
+    this.expertService.getExperts()
+      .subscribe(experts => this.experts = experts);
   }
 
 }

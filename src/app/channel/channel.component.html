@@ -1,0 +1,20 @@
+<h2>Channel</h2>
+<button (click)="editDetail()">Edit</button>
+<form [formGroup]="channelFormBuilder">
+  <label>
+    Email:
+    <input type='text' formControlName="email">
+  </label>
+  <label>
+    Phone:
+    <input type='text' formControlName="phone">
+  </label>
+  <label>
+    ProfileURL:
+    <input type='text' formControlName="profileUrl">
+  </label>
+  <div *ngIf="!edit">
+    <button (click)="updateChannel()">Update</button>
+    <button (click)="editDetail()">Cancel</button>
+  </div>
+</form>

@@ -1,3 +1,8 @@
-<p>
-  experts works!
-</p>
+<h1>All Experts</h1>
+<ul>
+  <li *ngFor="let expert of experts">
+    <a routerLink="/experts/{{expert.id}}">
+      {{expert.id}} {{expert.lastName}}
+    </a>
+  </li>
+</ul>

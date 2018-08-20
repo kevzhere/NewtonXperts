@@ -1,0 +1,31 @@
+<h1>Expert Details</h1>
+<button (click)="editDetail()">Edit</button>
+<form [formGroup]="expertFormBuilder">
+  <label>
+    FirstName:
+    <input type="text" formControlName="firstName">
+  </label>
+  <label>
+    LastName:
+    <input type="text" formControlName="lastName">
+  </label>
+  <label>
+    Title:
+    <input type="text" formControlName="title">
+  </label>
+  <label>
+    Company:
+    <input type="text" formControlName="company">
+  </label>
+  <div *ngIf="!edit">
+      <button (click)="updateExpert()">Update</button>
+      <button (click)="editDetail()">Cancel</button>
+    </div>
+</form>
+
+<h1>Channels</h1>
+<ul *ngIf="expert">
+  <li *ngFor="let channel of expert.channels">
+    <app-channel [channel]="channel"></app-channel>
+  </li>
+</ul>
